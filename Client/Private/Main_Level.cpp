@@ -15,7 +15,7 @@ void Main_Level::Loding()
 {
 	instance.Prototype.Register_Prototype(PROTO_TYPE::COMPONENT, "TRANSFORM", new Transform(instance.Device));
 	instance.Prototype.Register_Prototype(PROTO_TYPE::COMPONENT, "RECT", new VI_Buffer_Rect(instance.Device));
-	instance.Prototype.Register_Prototype(PROTO_TYPE::COMPONENT, "PLAYER_TEXTURE", new Texture(instance.Device, TEXT("../Bin/Resources/Textures/Player/Player0.png")));
+	instance.Prototype.Register_Prototype(PROTO_TYPE::COMPONENT, "PLAYER_TEXTURE", new Texture(instance.Device, TEXT("Resources/Textures/Player/Player0.png")));
 
 	instance.Prototype.Register_Prototype(PROTO_TYPE::OBJECT, "PLAYER", new Player(instance));
 	instance.Prototype.Register_Prototype(PROTO_TYPE::OBJECT, "CAMERA", new Camera(instance));
