@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="_Client">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Client_Define">
+      <UniqueIdentifier>{56352246-d065-4f91-b8b8-5f91f0f8e442}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Client_Define\Client_PCH">
+      <UniqueIdentifier>{fe399c30-617e-46b8-a899-2abd39865bc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level">
+      <UniqueIdentifier>{36f6816a-134e-49a1-b9b2-67e8c0c04b48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level\Main">
+      <UniqueIdentifier>{89a1639d-35d4-4a2f-a99d-f8513b75b3c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{5eac6431-c2ac-424c-9b64-cdde5a18cb69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Camera">
+      <UniqueIdentifier>{7d198865-0e8a-4d27-a1ad-3d6faa66461e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Client.h">
+      <Filter>_Client</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>_Client</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>_Client</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>_Client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Client_PCH.h">
+      <Filter>Client_Define\Client_PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Client_Typedef.h">
+      <Filter>Client_Define\Client_PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Main_Level.h">
+      <Filter>Level\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Camera.h">
+      <Filter>Object\Camera</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Client.cpp">
+      <Filter>_Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Client_PCH.cpp">
+      <Filter>Client_Define\Client_PCH</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Main_Level.cpp">
+      <Filter>Level\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Camera.cpp">
+      <Filter>Object\Camera</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Client.ico">
+      <Filter>_Client</Filter>
+    </Image>
+    <Image Include="small.ico">
+      <Filter>_Client</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Client.rc">
+      <Filter>_Client</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
