@@ -14,11 +14,15 @@ public:
 	bool UpdateLimit();
 	void FPS_INFO(HWND Hwnd);
 
+	const float GetFixedDT() const;
+	const float GetDT() const;
+
 private:
 	LARGE_INTEGER m_Frequency{};
 	LARGE_INTEGER m_PrevTime{}, m_CurTime{};
 
 	int m_FPS = 0;
+	int m_UpdateFrame = 0, m_FixedFrame = 0;
 	int m_FixedLimit = 0, m_UpdateLimit = 0;
 
 	float m_FixedLimitDt = 0.f, m_UpdateLimitDt = 0.f;

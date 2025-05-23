@@ -23,8 +23,8 @@ private:
 	void FixedUpdate(float DT) override;
 	void Update(float DT) override;
 	void LateUpdate(float DT) override;
-	void Render() override;
 	void Render_Begin() override;
+	void Render() override;
 	void Render_End() override;
 private:
 	void Initialize(const void* Args) override;
@@ -32,7 +32,6 @@ private:
 	void Free() override;
 
 private:
-	Transform* m_Transform = nullptr;
 	matrix m_ProjectionMat;
 	CAMERA_DESC m_Desc;
 };

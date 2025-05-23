@@ -8,11 +8,13 @@
 BEGIN(Engine)
 struct GameInstance
 {
-	GameInstance(LPDIRECT3DDEVICE9 DEVICE)
-		: Device(DEVICE), Level(*this)
+	GameInstance(LPDIRECT3DDEVICE9& DEVICE)
+		: Device(DEVICE)
+		, Level(*this)
+		, Object(Prototype)
 	{}
 
-	LPDIRECT3DDEVICE9 Device;
+	LPDIRECT3DDEVICE9& Device;
 	LevelManager Level;
 	PrototypeManager Prototype;
 	ObjectManager Object;

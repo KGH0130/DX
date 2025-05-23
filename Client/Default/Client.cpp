@@ -35,8 +35,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 	GameInstance Instance(Device.GetDevice());
 	LevelManager& Level = Instance.Level;
-	Level.OpenLevel(new Main_Level);
-	TimeManager Time(50, 60);
+	Level.OpenLevel(new Main_Level(Instance));
+	TimeManager Time(50, 65);
 	while(!GetAsyncKeyState(VK_ESCAPE))
 	{
 		if(PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
@@ -48,17 +48,19 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		Level.SyncLevel();
 
 		while(Time.FixedLimit())
-			Level.FixedUpdate(0.002f);
+			Level.FixedUpdate(Time.GetFixedDT());
 
 		while(Time.UpdateLimit())
 		{
-			Level.Update(0.0016f);
-			Level.LateUpdate(0.0016f);
+			auto dt = Time.GetDT();
+			Level.Update(dt);
+			Level.LateUpdate(dt);
 			Level.Render();
 		}
 
 		Level.EndFrame();
 		Time.FPS_INFO(g_hWnd);
+		Sleep(1);
 	}
 
 	return (int)msg.wParam;

@@ -18,10 +18,13 @@
       <UniqueIdentifier>{89a1639d-35d4-4a2f-a99d-f8513b75b3c6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Object">
-      <UniqueIdentifier>{5eac6431-c2ac-424c-9b64-cdde5a18cb69}</UniqueIdentifier>
+      <UniqueIdentifier>{4e518234-c3f1-4a1a-a62c-7806f2260325}</UniqueIdentifier>
     </Filter>
     <Filter Include="Object\Camera">
-      <UniqueIdentifier>{7d198865-0e8a-4d27-a1ad-3d6faa66461e}</UniqueIdentifier>
+      <UniqueIdentifier>{7f3723ad-bd93-41d9-8967-49fc65fa0487}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Player">
+      <UniqueIdentifier>{a158a0bd-5bee-4513-aae8-1ab0f1a4d7e3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +52,9 @@
     <ClInclude Include="..\Header\Camera.h">
       <Filter>Object\Camera</Filter>
     </ClInclude>
+    <ClInclude Include="..\Header\Player.h">
+      <Filter>Object\Player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -62,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="..\Private\Camera.cpp">
       <Filter>Object\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Player.cpp">
+      <Filter>Object\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

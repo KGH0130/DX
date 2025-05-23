@@ -39,7 +39,7 @@ Graphic_Device::~Graphic_Device()
 	m_Device->Release();
 }
 
-LPDIRECT3DDEVICE9 Graphic_Device::GetDevice() const
+LPDIRECT3DDEVICE9& Graphic_Device::GetDevice()
 {
 	return m_Device;
 }

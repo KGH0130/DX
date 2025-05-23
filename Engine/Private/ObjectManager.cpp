@@ -1,19 +1,22 @@
 #include "ObjectManager.h"
 
+ObjectManager::ObjectManager(PrototypeManager& Prototype)
+	: m_Prototype(Prototype)
+{}
+
 ObjectManager::~ObjectManager()
 {
 	Clear();
 }
 
-IObject* ObjectManager::Register_Object(RENDER_TYPE Type, const std::string& Name, IObject* Obj)
+IObject* ObjectManager::Add_Object(RENDER_TYPE Type, const std::string& Name, const void* Args)
 {
-	auto iter = m_ObjectMap.find(Name);
-	assert(iter == m_ObjectMap.end());
-	m_ObjectMap.emplace(Name, Obj);
-	m_Objects.emplace_back(Obj);
+	auto* newClone = static_cast<IObject*>(m_Prototype.Clone(PROTO_TYPE::OBJECT, Name, Args));
+	m_ObjectMap.emplace(Name, newClone);
+	m_Objects.emplace_back(newClone);
 	if(Type != RENDER_TYPE::NONE)
-		m_Renders[static_cast<size_t>(Type)].emplace_back(Obj);
-	return Obj;
+		m_Renders[static_cast<size_t>(Type)].emplace_back(newClone);
+	return newClone;
 }
 
 void ObjectManager::FixedUpdate(float DT)

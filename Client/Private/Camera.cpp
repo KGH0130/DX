@@ -30,15 +30,18 @@ void Camera::Update(float DT)
 	{
 		m_Transform->Move_Right(DT);
 	}
+
+	instance.Device->SetTransform(D3DTS_VIEW, &m_Transform->GetInverseMatrix());
+	instance.Device->SetTransform(D3DTS_PROJECTION, D3DXMatrixPerspectiveFovLH(&m_ProjectionMat, m_Desc.fov, m_Desc.aspect, m_Desc.camNear, m_Desc.camFar));
 }
 
 void Camera::LateUpdate(float DT)
 {}
 
-void Camera::Render()
+void Camera::Render_Begin()
 {}
 
-void Camera::Render_Begin()
+void Camera::Render()
 {}
 
 void Camera::Render_End()
@@ -54,10 +57,11 @@ void Camera::Free()
 
 void Camera::Initialize(const void* Args)
 {
-	auto tfDesc = Transform::TRANSFORM_DESC(20, 20);
+	auto tfDesc = Transform::TRANSFORM_DESC(20.f, 20.f);
 	m_Transform = static_cast<Transform*>(AddComponent("TRANSFORM", &tfDesc));
 	if(!Args) return;
 
 	std::memcpy(&m_Desc, Args, sizeof(m_Desc));
-
+	m_Transform->SetState(STATE::POSITION, m_Desc.eye);
+	m_Transform->Look_At(m_Desc.at);
 }

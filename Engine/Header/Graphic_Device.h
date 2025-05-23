@@ -10,7 +10,7 @@ public:
 	~Graphic_Device();
 
 public:
-	LPDIRECT3DDEVICE9 GetDevice() const;
+	LPDIRECT3DDEVICE9& GetDevice();
 
 private:
 	LPDIRECT3D9 m_SDK = nullptr;

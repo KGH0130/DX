@@ -1,7 +1,6 @@
 #include "Transform.h"
-#include "VI_Buffer.h"
 
-Transform::Transform(LPDEVICE Device)
+Transform::Transform(LPDEVICE& Device)
 	: IComponent(Device)
 {
 	D3DXMatrixIdentity(&m_WorldMat);
@@ -11,6 +10,11 @@ Transform::Transform(const Transform& rhs)
 	: IComponent(rhs)
 	, m_WorldMat(rhs.m_WorldMat)
 {}
+
+void Transform::Render()
+{
+	device->SetTransform(D3DTS_WORLD, &m_WorldMat);
+}
 
 vector3 Transform::GetState(STATE State) const
 {
@@ -40,11 +44,10 @@ const matrix& Transform::GetWorldMatrix() const
 	return m_WorldMat;
 }
 
-const matrix Transform::GetInverseMatrix() const
+const matrix& Transform::GetInverseMatrix()
 {
-	matrix newMat;
-	D3DXMatrixInverse(&newMat, nullptr, &m_WorldMat);
-	return newMat;
+	D3DXMatrixInverse(&m_InverseMat, nullptr, &m_WorldMat);
+	return m_InverseMat;
 }
 
 void Transform::Move_Forward(float DT)

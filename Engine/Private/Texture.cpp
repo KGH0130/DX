@@ -2,9 +2,8 @@
 
 Texture::Texture(LPDEVICE& Device, const std::wstring& FilePath, uint32_t NumTexture)
 	: IComponent(Device)
-	, m_Textures(NumTexture)
 {
-	for(size_t i = 0; i < m_numTexture; ++i)
+	for(size_t i = 0; i < NumTexture; ++i)
 	{
 		IDirect3DBaseTexture9* texture = nullptr;
 		wchar_t textureFilePath[MAX_PATH]{};
@@ -20,13 +19,12 @@ Texture::Texture(LPDEVICE& Device, const std::wstring& FilePath, uint32_t NumTex
 
 Texture::Texture(const Texture& rhs)
 	: IComponent(rhs)
-	, m_numTexture(rhs.m_numTexture)
 	, m_Textures(rhs.m_Textures)
 {}
 
 void Texture::Render(uint32_t TextureIndex)
 {
-	if(m_numTexture <= TextureIndex)
+	if(m_Textures.size() <= TextureIndex)
 		assert(false);
 
 	if(FAILED(device->SetTexture(0, m_Textures[TextureIndex])))

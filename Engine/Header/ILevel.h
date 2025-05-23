@@ -7,16 +7,17 @@ struct GameInstance;
 class ENGINE_DLL ILevel
 {
 public:
+	ILevel(GameInstance& Instance);
 	virtual ~ILevel() = default;
 
 public:
-	void OnLoding(GameInstance* Instance);
+	void OnLoding();
 
 private:
 	virtual void Initialize() PURE;
 	virtual void Loding() PURE;
 
 protected:
-	GameInstance* instance = nullptr;
+	GameInstance& instance;
 };
 END

@@ -18,7 +18,6 @@ private:
 	void Free() override;
 
 private:
-	uint32_t m_numTexture = 0u;
 	std::vector<IDirect3DBaseTexture9*> m_Textures;
 };
 END

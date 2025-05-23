@@ -4,14 +4,16 @@
 
 BEGIN(Engine)
 class IObject;
+class PrototypeManager;
 
 class ENGINE_DLL ObjectManager
 {
 public:
+	ObjectManager(PrototypeManager& Prototype);
 	~ObjectManager();
 
 public:
-	IObject* Register_Object(RENDER_TYPE Type, const std::string& Name, IObject* Obj);
+	IObject* Add_Object(RENDER_TYPE Type, const std::string& Name, const void* Args = nullptr);
 
 public:
 	void FixedUpdate(float DT);
@@ -21,6 +23,8 @@ public:
 
 	void Clear();
 private:
+	PrototypeManager& m_Prototype;
+
 	std::unordered_map<std::string, IObject*> m_ObjectMap;
 
 	std::vector<IObject*> m_Objects;

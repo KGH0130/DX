@@ -17,8 +17,11 @@ public:
 	};
 
 public:
-	Transform(LPDEVICE Device);
+	Transform(LPDEVICE& Device);
 	Transform(const Transform& rhs);
+
+public:
+	void Render();
 
 public:
 	vector3 GetState(STATE State) const;
@@ -26,7 +29,7 @@ public:
 	const vector3 GetScale() const;
 
 	const matrix& GetWorldMatrix() const;
-	const matrix GetInverseMatrix() const;
+	const matrix& GetInverseMatrix();
 
 public:
 	void Move_Forward(float DT);
@@ -48,6 +51,7 @@ private:
 
 private:
 	matrix m_WorldMat;
+	matrix m_InverseMat;
 
 	TRANSFORM_DESC m_Desc;
 };

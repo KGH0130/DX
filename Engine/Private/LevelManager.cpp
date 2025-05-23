@@ -28,7 +28,7 @@ void LevelManager::SyncLevel()
 	m_NextLevel = nullptr;
 	std::thread t1([&]
 	{
-		m_CurLevel->OnLoding(&m_Instance);
+		m_CurLevel->OnLoding();
 	});
 
 	t1.join();

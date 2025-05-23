@@ -1,8 +1,11 @@
 #include "ILevel.h"
 
-void ILevel::OnLoding(GameInstance* Instance)
+ILevel::ILevel(GameInstance& Instance)
+	: instance(Instance)
+{}
+
+void ILevel::OnLoding()
 {
-	instance = Instance;
 	Loding();
 	Initialize();
 }
