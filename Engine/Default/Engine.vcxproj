@@ -183,6 +183,7 @@
     <ClInclude Include="..\Header\TimeManager.h" />
     <ClInclude Include="..\Header\Transform.h" />
     <ClInclude Include="..\Header\VI_Buffer.h" />
+    <ClInclude Include="..\Header\VI_Buffer_Cube.h" />
     <ClInclude Include="..\Header\VI_Buffer_Rect.h" />
     <ClInclude Include="..\Header\VI_Buffer_Terrain.h" />
   </ItemGroup>
@@ -204,6 +205,7 @@
     <ClCompile Include="..\Private\TimeManager.cpp" />
     <ClCompile Include="..\Private\Transform.cpp" />
     <ClCompile Include="..\Private\VI_Buffer.cpp" />
+    <ClCompile Include="..\Private\VI_Buffer_Cube.cpp" />
     <ClCompile Include="..\Private\VI_Buffer_Rect.cpp" />
     <ClCompile Include="..\Private\VI_Buffer_Terrain.cpp" />
   </ItemGroup>

@@ -73,6 +73,9 @@
     <Filter Include="00. Engine_Define\Engine_PCH">
       <UniqueIdentifier>{d6bfd70e-ba4e-4052-bf00-896392d8cd38}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Component\VI_Buffer\VI_Buferr_Cube">
+      <UniqueIdentifier>{f1144265-b673-4cab-b97e-8a941112700f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Private\Engine_PCH.cpp">
@@ -123,6 +126,7 @@
     <ClCompile Include="..\Private\VI_Buffer_Terrain.cpp">
       <Filter>Component\VI_Buffer\VI_Buffer_Terrain</Filter>
     </ClCompile>
+    <ClCompile Include="..\Private\VI_Buffer_Cube.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Header\Engine_PCH.h">
@@ -191,5 +195,6 @@
     <ClInclude Include="..\Header\VI_Buffer_Terrain.h">
       <Filter>Component\VI_Buffer\VI_Buffer_Terrain</Filter>
     </ClInclude>
+    <ClInclude Include="..\Header\VI_Buffer_Cube.h" />
   </ItemGroup>
 </Project>

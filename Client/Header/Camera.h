@@ -1,4 +1,5 @@
 #pragma once
+#include "Sky.h"
 
 class Camera : public IObject
 {
@@ -34,5 +35,6 @@ private:
 private:
 	matrix m_ProjectionMat;
 	CAMERA_DESC m_Desc;
+	Sky* m_Sky = nullptr;;
 };
 

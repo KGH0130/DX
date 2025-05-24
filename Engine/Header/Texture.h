@@ -1,4 +1,5 @@
 #pragma once
+#include "Engine_Enum.h"
 #include "Engine_Macro.h"
 #include "IComponent.h"
 
@@ -6,7 +7,7 @@ BEGIN(Engine)
 class ENGINE_DLL Texture : public IComponent
 {
 public:
-	Texture(LPDEVICE& Device, const std::wstring& FilePath, uint32_t NumTexture = 1u);
+	Texture(LPDEVICE& Device, const std::wstring& FilePath, uint32_t NumTexture = 1u, TEXTURE_TYPE Type = TEXTURE_TYPE::RECT);
 	Texture(const Texture& rhs);
 
 public:

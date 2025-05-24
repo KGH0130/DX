@@ -5,6 +5,7 @@ namespace Engine
 enum class PROTO_TYPE { OBJECT, COMPONENT, IDX };
 enum class RENDER_TYPE { PRIORITY, NO_BLEND, BLEND, UI, NONE };
 enum class STATE { RIGHT, UP, LOOK, POSITION };
+enum class TEXTURE_TYPE { RECT, CUBE };
 
 enum Key : int
 {

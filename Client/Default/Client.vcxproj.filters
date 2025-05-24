@@ -29,6 +29,9 @@
     <Filter Include="00. Client_Define\Client_PCH">
       <UniqueIdentifier>{fe399c30-617e-46b8-a899-2abd39865bc4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\Sky">
+      <UniqueIdentifier>{5b64cfc9-6f20-4e68-bffa-08082e7ee0b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h">
@@ -61,6 +64,9 @@
     <ClInclude Include="..\Header\Client_Typedef.h">
       <Filter>00. Client_Define</Filter>
     </ClInclude>
+    <ClInclude Include="..\Header\Sky.h">
+      <Filter>Object\Sky</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -80,6 +86,9 @@
     </ClCompile>
     <ClCompile Include="..\Private\Terrain.cpp">
       <Filter>Object\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Sky.cpp">
+      <Filter>Object\Sky</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

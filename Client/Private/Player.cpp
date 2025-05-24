@@ -22,7 +22,7 @@ void Player::LateUpdate(float DT)
 void Player::Render_Begin()
 {
 	instance.Device->SetRenderState(D3DRS_LIGHTING, FALSE);
-	instance.Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+	instance.Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
 	instance.Device->SetRenderState(D3DRS_ALPHATESTENABLE, TRUE);
 	instance.Device->SetRenderState(D3DRS_ALPHAREF, 125);
 	instance.Device->SetRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
@@ -31,13 +31,14 @@ void Player::Render_Begin()
 void Player::Render()
 {
 	m_Transform->Render();
+
+	m_Texture->Render();
+
 	m_Buffer->Render();
-	m_Texture->Render(0);
 }
 
 void Player::Render_End()
 {
-	instance.Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
 	instance.Device->SetRenderState(D3DRS_ALPHATESTENABLE, FALSE);
 }
 

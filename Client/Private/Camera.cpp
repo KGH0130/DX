@@ -33,6 +33,8 @@ void Camera::Update(float DT)
 
 	instance.Device->SetTransform(D3DTS_VIEW, &m_Transform->GetInverseMatrix());
 	instance.Device->SetTransform(D3DTS_PROJECTION, D3DXMatrixPerspectiveFovLH(&m_ProjectionMat, m_Desc.fov, m_Desc.aspect, m_Desc.camNear, m_Desc.camFar));
+	Transform* skytf = static_cast<Transform*>(m_Sky->GetComponent("TRANSFORM"));
+	skytf->SetState(STATE::POSITION, m_Transform->GetState(STATE::POSITION));
 }
 
 void Camera::LateUpdate(float DT)
@@ -59,6 +61,7 @@ void Camera::Initialize(const void* Args)
 {
 	auto tfDesc = Transform::TRANSFORM_DESC(20.f, 20.f);
 	m_Transform = static_cast<Transform*>(AddComponent("TRANSFORM", &tfDesc));
+	m_Sky = static_cast<Sky*>(instance.Object.Add_Object(RENDER_TYPE::PRIORITY, "SKY"));
 	if(!Args) return;
 
 	std::memcpy(&m_Desc, Args, sizeof(CAMERA_DESC));

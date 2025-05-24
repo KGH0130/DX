@@ -57,4 +57,11 @@ struct VTXPOSTEX
 	enum { FVF = D3DFVF_XYZ | D3DFVF_TEX1 };
 };
 
+struct VTXCUBETEX
+{
+	vector3 pos{};
+	vector3 tex{};
+	enum { FVF = D3DFVF_XYZ | D3DFVF_TEX1 | D3DFVF_TEXCOORDSIZE3(0) };
+};
+
 }

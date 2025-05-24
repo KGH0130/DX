@@ -160,6 +160,7 @@
     <ClInclude Include="..\Header\Client_Typedef.h" />
     <ClInclude Include="..\Header\Main_Level.h" />
     <ClInclude Include="..\Header\Player.h" />
+    <ClInclude Include="..\Header\Sky.h" />
     <ClInclude Include="..\Header\Terrain.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="framework.h" />
@@ -174,6 +175,7 @@
     </ClCompile>
     <ClCompile Include="..\Private\Main_Level.cpp" />
     <ClCompile Include="..\Private\Player.cpp" />
+    <ClCompile Include="..\Private\Sky.cpp" />
     <ClCompile Include="..\Private\Terrain.cpp" />
     <ClCompile Include="Client.cpp" />
   </ItemGroup>

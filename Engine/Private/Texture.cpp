@@ -1,6 +1,6 @@
 #include "Texture.h"
 
-Texture::Texture(LPDEVICE& Device, const std::wstring& FilePath, uint32_t NumTexture)
+Texture::Texture(LPDEVICE& Device, const std::wstring& FilePath, uint32_t NumTexture, TEXTURE_TYPE Type)
 	: IComponent(Device)
 {
 	for(size_t i = 0; i < NumTexture; ++i)
@@ -9,9 +9,9 @@ Texture::Texture(LPDEVICE& Device, const std::wstring& FilePath, uint32_t NumTex
 		wchar_t textureFilePath[MAX_PATH]{};
 
 		swprintf_s(textureFilePath, MAX_PATH, FilePath.c_str(), i);
-
-		if(FAILED(D3DXCreateTextureFromFile(device, textureFilePath, reinterpret_cast<LPDIRECT3DTEXTURE9*>(&texture))))
-			assert(false);
+		Type == TEXTURE_TYPE::RECT ?
+			D3DXCreateTextureFromFile(device, textureFilePath, reinterpret_cast<LPDIRECT3DTEXTURE9*>(&texture)) :
+			D3DXCreateCubeTextureFromFile(device, textureFilePath, reinterpret_cast<LPDIRECT3DCUBETEXTURE9*>(&texture));
 
 		m_Textures.emplace_back(texture);
 	}
@@ -40,9 +40,4 @@ IClone* Texture::Clone()
 }
 
 void Texture::Free()
-{
-	for(auto& var : m_Textures)
-	{
-		var->Release();
-	}
-}
+{}

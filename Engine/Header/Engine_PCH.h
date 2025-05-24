@@ -33,5 +33,6 @@
 #include "TimeManager.h"
 #include "Transform.h"
 #include "VI_Buffer.h"
+#include "VI_Buffer_Cube.h"
 #include "VI_Buffer_Rect.h"
 #include "VI_Buffer_Terrain.h"

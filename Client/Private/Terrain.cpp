@@ -33,7 +33,9 @@ void Terrain::Render_Begin()
 void Terrain::Render()
 {
 	m_Transform->Render();
-	m_Texture->Render(0);
+
+	m_Texture->Render();
+
 	m_Buffer->Render();
 }
 
