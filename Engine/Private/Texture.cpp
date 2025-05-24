@@ -40,4 +40,9 @@ IClone* Texture::Clone()
 }
 
 void Texture::Free()
-{}
+{
+	for(auto& var : m_Textures)
+	{
+		var->Release();
+	}
+}

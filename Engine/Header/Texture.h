@@ -10,7 +10,7 @@ public:
 	Texture(const Texture& rhs);
 
 public:
-	void Render(uint32_t TextureIndex);
+	void Render(uint32_t TextureIndex = 0);
 
 private:
 	void Initialize(const void* Args) override;

@@ -61,7 +61,7 @@ void Camera::Initialize(const void* Args)
 	m_Transform = static_cast<Transform*>(AddComponent("TRANSFORM", &tfDesc));
 	if(!Args) return;
 
-	std::memcpy(&m_Desc, Args, sizeof(m_Desc));
+	std::memcpy(&m_Desc, Args, sizeof(CAMERA_DESC));
 	m_Transform->SetState(STATE::POSITION, m_Desc.eye);
 	m_Transform->Look_At(m_Desc.at);
 }

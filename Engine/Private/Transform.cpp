@@ -158,7 +158,7 @@ void Transform::Move_To(const vector3& Target, float DT, float Limit)
 void Transform::Initialize(const void* Args)
 {
 	if(Args)
-		std::memcpy(&m_Desc, Args, sizeof(m_Desc));
+		std::memcpy(&m_Desc, Args, sizeof(TRANSFORM_DESC));
 }
 
 IClone* Transform::Clone()

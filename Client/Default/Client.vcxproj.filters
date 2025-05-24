@@ -5,12 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Client_Define">
-      <UniqueIdentifier>{56352246-d065-4f91-b8b8-5f91f0f8e442}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Client_Define\Client_PCH">
-      <UniqueIdentifier>{fe399c30-617e-46b8-a899-2abd39865bc4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Level">
       <UniqueIdentifier>{36f6816a-134e-49a1-b9b2-67e8c0c04b48}</UniqueIdentifier>
     </Filter>
@@ -25,6 +19,15 @@
     </Filter>
     <Filter Include="Object\Player">
       <UniqueIdentifier>{a158a0bd-5bee-4513-aae8-1ab0f1a4d7e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Terrain">
+      <UniqueIdentifier>{5adf5ee7-74f5-40b8-b567-feaa3b5be8b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00. Client_Define">
+      <UniqueIdentifier>{56352246-d065-4f91-b8b8-5f91f0f8e442}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00. Client_Define\Client_PCH">
+      <UniqueIdentifier>{fe399c30-617e-46b8-a899-2abd39865bc4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -41,10 +44,7 @@
       <Filter>_Client</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\Client_PCH.h">
-      <Filter>Client_Define\Client_PCH</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Header\Client_Typedef.h">
-      <Filter>Client_Define\Client_PCH</Filter>
+      <Filter>00. Client_Define\Client_PCH</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\Main_Level.h">
       <Filter>Level\Main</Filter>
@@ -55,13 +55,19 @@
     <ClInclude Include="..\Header\Player.h">
       <Filter>Object\Player</Filter>
     </ClInclude>
+    <ClInclude Include="..\Header\Terrain.h">
+      <Filter>Object\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Client_Typedef.h">
+      <Filter>00. Client_Define</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
       <Filter>_Client</Filter>
     </ClCompile>
     <ClCompile Include="..\Private\Client_PCH.cpp">
-      <Filter>Client_Define\Client_PCH</Filter>
+      <Filter>00. Client_Define\Client_PCH</Filter>
     </ClCompile>
     <ClCompile Include="..\Private\Main_Level.cpp">
       <Filter>Level\Main</Filter>
@@ -71,6 +77,9 @@
     </ClCompile>
     <ClCompile Include="..\Private\Player.cpp">
       <Filter>Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Terrain.cpp">
+      <Filter>Object\Terrain</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
