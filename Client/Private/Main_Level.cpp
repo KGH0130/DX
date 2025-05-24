@@ -10,7 +10,6 @@ void Main_Level::Initialize()
 	instance.Object.Add_Object(RENDER_TYPE::NONE, "CAMERA", &cameraDesc);
 	instance.Object.Add_Object(RENDER_TYPE::BLEND, "PLAYER");
 	instance.Object.Add_Object(RENDER_TYPE::NO_BLEND, "TERRAIN");
-	//instance.Object.Add_Object(RENDER_TYPE::PRIORITY, "SKY");
 }
 
 void Main_Level::Loding()

@@ -19,9 +19,10 @@ void Sky::LateUpdate(float DT)
 
 void Sky::Render_Begin()
 {
-	instance.Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_CW);
-	//instance.Device->SetRenderState(D3DRS_ZENABLE, FALSE);
+	instance.Device->SetRenderState(D3DRS_ZENABLE, FALSE);
 	instance.Device->SetRenderState(D3DRS_ZWRITEENABLE, FALSE);
+	instance.Device->SetRenderState(D3DRS_LIGHTING, FALSE);
+	instance.Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 }
 
 void Sky::Render()
@@ -33,9 +34,10 @@ void Sky::Render()
 
 void Sky::Render_End()
 {
-	instance.Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
-	//instance.Device->SetRenderState(D3DRS_ZENABLE, TRUE);
+	instance.Device->SetRenderState(D3DRS_ZENABLE, TRUE);
 	instance.Device->SetRenderState(D3DRS_ZWRITEENABLE, TRUE);
+	instance.Device->SetRenderState(D3DRS_LIGHTING, TRUE);
+	instance.Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
 }
 
 void Sky::Initialize(const void* Args)

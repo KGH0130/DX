@@ -126,7 +126,9 @@
     <ClCompile Include="..\Private\VI_Buffer_Terrain.cpp">
       <Filter>Component\VI_Buffer\VI_Buffer_Terrain</Filter>
     </ClCompile>
-    <ClCompile Include="..\Private\VI_Buffer_Cube.cpp" />
+    <ClCompile Include="..\Private\VI_Buffer_Cube.cpp">
+      <Filter>Component\VI_Buffer\VI_Buferr_Cube</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Header\Engine_PCH.h">
@@ -195,6 +197,8 @@
     <ClInclude Include="..\Header\VI_Buffer_Terrain.h">
       <Filter>Component\VI_Buffer\VI_Buffer_Terrain</Filter>
     </ClInclude>
-    <ClInclude Include="..\Header\VI_Buffer_Cube.h" />
+    <ClInclude Include="..\Header\VI_Buffer_Cube.h">
+      <Filter>Component\VI_Buffer\VI_Buferr_Cube</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

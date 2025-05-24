@@ -33,18 +33,30 @@ VI_Buffer_Cube::VI_Buffer_Cube(LPDEVICE& Device)
 		assert(false);
 	uint16_t* idx = nullptr;
 	m_IB->Lock(0, 0, reinterpret_cast<void**>(&idx), 0);
+	// ¾Õ¸é
 	*idx++ = 0; *idx++ = 1; *idx++ = 2;
 	*idx++ = 0; *idx++ = 2; *idx++ = 3;
+
+	// µÞ¸é
 	*idx++ = 5; *idx++ = 4; *idx++ = 7;
 	*idx++ = 5; *idx++ = 7; *idx++ = 6;
+
+	// ¿ÞÂÊ¸é
 	*idx++ = 4; *idx++ = 0; *idx++ = 3;
 	*idx++ = 4; *idx++ = 3; *idx++ = 7;
+
+	// ¿À¸¥ÂÊ¸é
 	*idx++ = 1; *idx++ = 5; *idx++ = 6;
 	*idx++ = 1; *idx++ = 6; *idx++ = 2;
+
+	// ¹Ù´Ú¸é
 	*idx++ = 4; *idx++ = 5; *idx++ = 1;
 	*idx++ = 4; *idx++ = 1; *idx++ = 0;
+
+	// À­¸é
 	*idx++ = 3; *idx++ = 2; *idx++ = 6;
 	*idx++ = 3; *idx++ = 6; *idx++ = 7;
+	m_IB->Unlock();
 }
 
 VI_Buffer_Cube::VI_Buffer_Cube(const VI_Buffer_Cube& rhs)

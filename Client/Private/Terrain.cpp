@@ -28,6 +28,8 @@ void Terrain::Render_Begin()
 {
 	instance.Device->SetRenderState(D3DRS_LIGHTING, FALSE);
 	instance.Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
+
+	instance.Device->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
 }
 
 void Terrain::Render()
